@@ -8,14 +8,14 @@
     ]"
   >
     <!-- Top Section - Only show if there's header content or on mobile -->
-    <div 
+    <div
       v-if="hasHeaderContent || isMobileMenuOpen"
       class="p-1 border-b border-neutral-200 h-[49px]"
     >
       <div class="flex items-center justify-between gap-1 w-full">
         <!-- Header Content Slot -->
         <slot name="header" :isMobileMenuOpen="isMobileMenuOpen" />
-        
+
         <div class="grow" v-if="hasMobileHeaderContent">
           <slot name="mobile-header" :isMobileMenuOpen="isMobileMenuOpen" />
         </div>
@@ -34,9 +34,9 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Mobile Menu Toggle (when header is hidden on desktop) -->
-    <div 
+    <div
       v-else
       class="sm:hidden p-1 border-b border-neutral-200 h-[49px] flex items-center justify-start gap-2"
     >
@@ -55,7 +55,7 @@
     </div>
 
     <!-- Navigation Content -->
-    <nav 
+    <nav
       class="flex-1 p-2 overflow-y-auto flex flex-col"
       :class="{ 'hidden': !isMobileMenuOpen, 'sm:flex': true }"
     >
@@ -63,13 +63,13 @@
     </nav>
 
     <!-- Footer -->
-    <div 
+    <div
       class="p-2 border-t border-neutral-200"
       :class="{ 'hidden': !isMobileMenuOpen, 'sm:block': true }"
     >
       <slot name="footer" :isMobileMenuOpen="isMobileMenuOpen">
         <p class="text-xs text-neutral-400 text-center">
-          <span class="font-bold"><NuxtLink class="text-neutral-400" :to="{ name: 'home' }">OpnForm</NuxtLink></span>
+          <span class="font-bold"><NuxtLink class="text-neutral-400" :to="{ name: 'home' }">Lend A Loan Forms</NuxtLink></span>
           <span class="text-neutral-500" v-if="version"> v{{ version }}</span>
         </p>
       </slot>
@@ -109,4 +109,4 @@ onUnmounted(() => {
 defineExpose({
   isMobileMenuOpen
 })
-</script> 
+</script>

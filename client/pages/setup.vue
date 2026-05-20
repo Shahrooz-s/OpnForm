@@ -4,22 +4,22 @@
       <div class="flex justify-center items-center mb-6">
         <img
           src="/img/logo.svg"
-          alt="OpnForm logo"
+          alt="Lend A Loan Forms logo"
           class="w-8 h-8"
         >
         <h1 class="ml-2 text-xl font-semibold text-black">
-          OpnForm
+          Lend A Loan Forms
         </h1>
       </div>
-      
+
       <p class="mt-2 text-center text-sm text-neutral-600">
-        Welcome to OpnForm! Let's get you set up. Create your admin account to start building beautiful forms.
+        Welcome to Lend A Loan Forms. Create your admin account to start building forms.
       </p>
     </div>
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div class="bg-white py-8 px-4 shadow-sm sm:rounded-sm sm:px-10">
-        <RegisterForm 
+        <RegisterForm
           :is-quick="false"
           :is-setup="true"
           @registered="handleSetupComplete"
@@ -46,8 +46,8 @@ if (!setupRequired || !selfHosted) {
 
 // SEO
 useOpnSeoMeta({
-  title: "Setup - OpnForm",
-  description: "Set up your OpnForm instance",
+  title: "Setup - Lend A Loan Forms",
+  description: "Set up your Lend A Loan Forms instance",
   robots: "noindex, nofollow"
 })
 
@@ -59,14 +59,14 @@ definePageMeta({
 const handleSetupComplete = async () => {
   // Invalidate feature flags to update setup_required status
   await invalidateFlags()
-  
+
   // Show success message
   useAlert().success({
     title: "Setup Complete! 🎉",
-    description: "Your OpnForm instance is ready. Time to create your first form!"
+    description: "Your forms workspace is ready. Time to create your first form!"
   })
-  
+
   // Redirect to dashboard
   router.push({ name: "home" })
 }
-</script> 
+</script>

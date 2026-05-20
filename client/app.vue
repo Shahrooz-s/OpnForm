@@ -42,7 +42,7 @@ const isPublicFormPage = computed(() => route.name === 'forms-slug')
 useOpnSeoMeta({
   title: "Free Form Builder with Unlimited Submissions",
   description:
-    "Build beautiful, powerful forms for free with OpnForm. Unlimited submissions, rich features, and seamless integrations — fully open-source and easy to use.",
+    "Build Lend A Loan forms, collect submissions, and connect responses to the CRM.",
   ogImage: "/img/social-preview.jpg",
   robots: () => {
     return config.public.env === "production" ? null : "noindex, nofollow"
@@ -51,7 +51,7 @@ useOpnSeoMeta({
 
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - OpnForm` : "OpnForm"
+    return titleChunk ? `${titleChunk} - Lend A Loan Forms` : "Lend A Loan Forms"
   },
   meta: [
     {

@@ -1,11 +1,8 @@
 <template>
   <div class="dashboard-layout min-h-screen bg-neutral-50">
-    <!-- Sidebar -->
-    <AppSidebar />
-    
-    <!-- Main content area -->
-    <main class="sm:pl-58">
-      <!-- Content wrapper with proper spacing -->
+    <AppSidebar v-if="!isConcordEmbed" />
+
+    <main :class="{ 'sm:pl-58': !isConcordEmbed }">
       <div class="min-h-screen bg-white">
         <slot />
       </div>
@@ -15,10 +12,12 @@
 
 <script setup>
 import AppSidebar from "~/components/layouts/AppSidebar.vue"
+
+const isConcordEmbed = useConcordEmbed()
 </script>
 
 <style scoped>
 .dashboard-layout {
   /* Ensure proper layout structure */
 }
-</style> 
+</style>
